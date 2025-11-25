@@ -70,7 +70,7 @@ export default {
         }
       });
       try {
-        const res = await fetch('http://production.eba-tjqsdedb.eu-north-1.elasticbeanstalk.com/orders', {
+        const res = await fetch('https://cst3144-backend-gpfo.onrender.com/orders', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -82,9 +82,9 @@ export default {
         if (res.ok) {
           // Now update spaces for each unique lesson
           for (const item of this.cart) {
-            const lessonRes = await fetch(`http://production.eba-tjqsdedb.eu-north-1.elasticbeanstalk.com/lessons/${item._id}`);
+            const lessonRes = await fetch(`https://cst3144-backend-gpfo.onrender.com/lessons/${item._id}`);
             const lesson = await lessonRes.json();
-            await fetch(`http://production.eba-tjqsdedb.eu-north-1.elasticbeanstalk.com/lessons/${item._id}`, {
+            await fetch(`https://cst3144-backend-gpfo.onrender.com/lessons/${item._id}`, {
               method: 'PUT',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ space: lesson.space - item.quantity })
