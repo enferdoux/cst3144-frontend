@@ -100,7 +100,7 @@ export default {
   // Fetch lessons when component is created
   async created() {
     try {
-      const res = await fetch('http://localhost:3000/lessons');
+      const res = await fetch('http://production.eba-tjqsdedb.eu-north-1.elasticbeanstalk.com');
       this.lessons = await res.json();
     } catch (err) {
       // Log any fetch errors to the console
@@ -116,7 +116,7 @@ export default {
     // If searchQuery is empty fallback to getting all lessons.
     async performSearch() {
       try {
-        const url = this.searchQuery ? `http://localhost:3000/search?q=${encodeURIComponent(this.searchQuery)}` : 'http://localhost:3000/lessons';
+        const url = this.searchQuery ? `http://production.eba-tjqsdedb.eu-north-1.elasticbeanstalk.com/search?q=${encodeURIComponent(this.searchQuery)}` : 'http://production.eba-tjqsdedb.eu-north-1.elasticbeanstalk.com';
         const res = await fetch(url);
         this.lessons = await res.json();
       } catch (err) {
