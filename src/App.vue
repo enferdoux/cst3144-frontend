@@ -5,6 +5,7 @@
       <div class="navbar-nav">
         <router-link to="/lessons" class="nav-link">Lessons</router-link>
         <button @click="toggleCart" class="btn btn-outline-primary nav-link" :disabled="!cart.length">Cart ({{ cart.length }})</button>
+        <router-link to="/orders" class="nav-link">Orders</router-link>
       </div>
     </div>
   </nav>
