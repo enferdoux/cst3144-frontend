@@ -1,6 +1,7 @@
 {
     "name": "cst3144-frontend",
     "version": "1.0.0",
+    "homepage": "https://enferdoux.github.io/cst3144-frontend",
     "private": true,
     "scripts": {
         "dev": "vite",
