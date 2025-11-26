@@ -100,7 +100,7 @@ export default {
   // Fetch lessons when component is created
   async created() {
     try {
-      const res = await fetch('https://cst3144-backend-gpfo.onrender.com');
+      const res = await fetch('https://cst3144-backend-gpfo.onrender.com/lessons');
       this.lessons = await res.json();
     } catch (err) {
       // Log any fetch errors to the console
@@ -116,7 +116,7 @@ export default {
     // If searchQuery is empty fallback to getting all lessons.
     async performSearch() {
       try {
-        const url = this.searchQuery ? `https://cst3144-backend-gpfo.onrender.com/search?q=${encodeURIComponent(this.searchQuery)}` : 'http://production.eba-tjqsdedb.eu-north-1.elasticbeanstalk.com';
+        const url = this.searchQuery ? `https://cst3144-backend-gpfo.onrender.com/search?q=${encodeURIComponent(this.searchQuery)}` : 'https://cst3144-backend-gpfo.onrender.com/lessons';
         const res = await fetch(url);
         this.lessons = await res.json();
       } catch (err) {
